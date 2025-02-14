@@ -1,0 +1,109 @@
+\documentclass[a4paper,11pt]{article}\usepackage[pdftex]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{a4wide}
+%\usepackage{fullpage}
+%\usepackage[margin=0.75in]{geometry}
+\setlength{\textheight}{1.1\textheight}
+
+\RequirePackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+
+\font\helvSmallMediumFont=phvr at 4.0mm
+\font\helvSmallBoldFont=phvb at 4.0mm
+\font\helvMediumFont=phvr at 4.3mm
+\font\helvBoldFont=phvb at 4.3mm
+\font\ncsLargeFont=pncr at 5.0mm
+\def\helvSmall{\helvSmallBoldFont\baselineskip=3mm}
+\def\helvMedium{\helvMediumFont\baselineskip=6mm}
+\def\ncsLarge{\ncsLargeFont\baselineskip=21mm}
+
+\newcommand*{\code}{\fontfamily{pcr}\selectfont}
+\newcommand{\probP}{\text{I\kern-0.15em P}}
+
+\sloppy
+
+%\pagestyle{empty}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\addtolength{\topmargin}{-2cm}
+ \noindent\hbox{%
+  \vbox to 3.7cm{\hbox{\LARGE HÁSKÓLI ÍSLANDS}%
+               \vspace{1ex}
+               \hbox{\LARGE Iðnaðarverkfræði-, vélaverkfræði- og tölvunarfræðideild}%
+               \vspace{2ex}
+               \hbox{\Large HBV403G: Vefforritun 2 $\cdot$ Vor 2025}
+               \vspace{1ex}
+               \hbox{\Large Andri Fannar Kristjánsson}
+               \vspace{3ex}
+               \hbox{\Large \textbf{Einstaklingsverkefni  $\cdot$ Skýrsla}}
+}%
+%\scalebox{0.135}{\includegraphics{logo.eps}}
+% \hfill\hbox{}
+\par}
+
+\vspace{1.0ex} \hrule width \columnwidth 
+\vspace{2.0ex}
+
+\noindent
+
+Í þessu verkefni ætlum við að vinna með gögn úr könnuninni \textit{Handahófskenndar Spurningar um Lífið}. Við byrjum á að lesa gögnin inn með {\code read.csv}.
+
+\end{document}
