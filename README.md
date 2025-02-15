@@ -41,6 +41,7 @@ Fyrsta útgáfa mun leyfa notendum að búa til Use Cases fyrir sín hubúnaðar
 | 11   | Forkröfur og eftirskilyrði |
 | 12   | Flæði                      |
 | 13   | Lagfæringar                |
+
 Lítil reynsla er í ýmsu sem gert verður í þessu verkefni, að minnsta kosti í þessu umhverfi, og því getur margt reynst vera flókið í útfærslu, en líklegt er að erfiðast verði að útfæra UML klasarit fyrir bakenda og tengingar á milli flæða og krafna. Hýsa ætti verkefnið sem fyrst, og það uppfært jafnóðum. Skýrslan verður skrifuð samhliða verkefnavinnunni. Verkefnið verður ekki kynnt.
 
 ### Matskvarði
