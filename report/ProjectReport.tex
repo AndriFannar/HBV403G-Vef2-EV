@@ -93,7 +93,7 @@
                \vspace{1ex}
                \hbox{\Large Andri Fannar Kristjánsson}
                \vspace{3ex}
-               \hbox{\Large \textbf{Einstaklingsverkefni  $\cdot$ Skýrsla}}
+               \hbox{\Large \textbf{Vefþjónusta fyrir Kröfugreiningu Hugbúnaðar  $\cdot$ Skýrsla}}
 }%
 %\scalebox{0.135}{\includegraphics{logo.eps}}
 % \hfill\hbox{}
@@ -102,8 +102,26 @@
 \vspace{1.0ex} \hrule width \columnwidth 
 \vspace{2.0ex}
 
-\noindent
+\section{Inngangur}
+Kröfugreining er einstaklega mikilvæg er kemur að hugbúnaðargerð. Kröfugreining tryggir að hugbúnaðurinn sé framleiddur á réttan hátt, með færri villum og í samræmi við allar kröfur sem viðskiptavinir hafa sett fram. Því er mikilvægt að hafa góðan hugbúnað sem sér um að halda utan um alla eiginleika og kröfur sem verkefni kunna að hafa. Þetta varð mér ljóst eftir að hafa tekið áfangann \href{https://ugla.hi.is/kennsluskra/index.php?tab=nam&chapter=namskeid&id=71152920246}{HBV301 Verkfræði Kröfugreiningar}, þar sem farið var yfir kröfugreiningu og mikilvægi hennar við nákvæma hugbúnaðargerð. Í bókinni \href{https://www.processimpact.com/pubs.html#SR3E}{Software Requirements eftir Karl Wiegers og Joy Beatty}, þar sem vel er farið yfir alla eiginleika kröfugreiningar, kemur það bersýnilega í ljós að það að geyma kröfur á reglubundinn hátt í sérstökum hugbúnaði myndi einfalda til muna allt bókhald, breytingar, og vitnanir sem er notast mikið við. Því kom það vel til greina sem einstaklingsverkefni í Vefforritun 2.
 
-Í þessu verkefni ætlum við að vinna með gögn úr könnuninni \textit{Handahófskenndar Spurningar um Lífið}. Við byrjum á að lesa gögnin inn með {\code read.csv}.
+\section{Útfærsla}
+Þar sem slíkur hugbúnaður er sér í lagi stór þegar allt er tekið með, er aðeins áætlað fyrir þetta einstaklingsverkefni að setja upp grunn, og að hægt verði að búa til Use Cases á góðan máta, með öllum þeim eiginleikum sem fylgja því. Það mun fela í sér að notendur geta gert eftirfarandi fyrir hvert Use Case:
+\begin{itemize}
+    \item Skilgreina ýmis formatriði á borð við nafn, dagsetningu, megin notanda og auka notendur, lýsingu, forgang, tíðni, aðrar upplýsingar og ályktanir.
+    \item Skilgreina forkröfur og eftirskilyrði sem hægt verður að vitna í.
+    \item  Setja fram venjulegt flæði, önnur flæði og undantekningar, þar sem hægt verður að vitna í einstök skref.
+    \item Tengja viðskiptareglur sem eiga við.
+\end{itemize}
+Þessi virkni var fyrir valinu þar sem talið er að hann yrði mest notaður, hefur ýmsa mismunandi þætti sem krefjast sniðugra lausna, og er mikilvægur hluti af SRS skjali. Hugsað er að seinna meir væri hægt að halda áfram og bæta við frekari virkni, með það markmið að geyma allar þær upplýsingar sem þarf til að búa til SRS skjal. 
+
+\section{Tækni}
+Til að geyma öll þessi gögn er lagt til að nota SQL gagnagrunn, til dæmis PostgreSQL, aðallega vegna kunnáttu. REST API bakendi verður forritaður til að taka á móti öllum beiðnum frá framenda, með það að markmiði (ólíklega í þessu verkefni) að gera mismunandi notendum kleift að búa sér til aðgang þar sem þau geta séð yfirlit yfir sín verkefni. Lítil áhersla verður löð á framenda, aðeins þannig að hann sé snyrtilegur og nothæfur, þar sem megin þungi þessa verkefnis felst í bakendagerð. Þá verður búið til UML klasarit fyrir bakenda, og reyna þannig að áætla hvernig hönnun hans eigi að líta út.
+
+\section{Hvað Gekk Vel}
+
+\section{Hvað Gekk Illa}
+
+\section{Hvað Var Áhugavert}
 
 \end{document}
