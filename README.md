@@ -1,7 +1,7 @@
 # Kröfugreiningarforrit
 _HBV403G Vefforritun 2 - Einstaklingsverkefni_
 
-Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur ( aðiens Use Cases hingað til) verkefna. Notar Hono til að útfæra REST-ful API, og notar Prisma til að geyma gögn. Nánari verkefnalýsingu má finna [hér](https://github.com/AndriFannar/HBV403G-Vef2-EV).
+Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur ( aðiens Use Cases hingað til) verkefna. Notar Hono til að útfæra REST-ful API, og notar Prisma til að geyma gögn. Nánari verkefnalýsingu má finna [hér](projectPlan.md).
 
 ## Hýsing
 API má finna [hér](https://hbv403g-vef2-ev2-pls.onrender.com).
