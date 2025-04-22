@@ -8,8 +8,8 @@
  */
 
 import type { NewProject, BaseProject, Project } from '../entities/project.js';
+import { PrismaClient, ProjectCounterType } from '@prisma/client';
 import { generateSlug } from '../lib/slugUtils.js';
-import { PrismaClient } from '@prisma/client';
 import { randomInt } from 'crypto';
 
 const MAX_RANDINT = 281474976710655;
