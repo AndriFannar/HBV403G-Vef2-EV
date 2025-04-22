@@ -13,6 +13,6 @@
     "jsxImportSource": "hono/jsx",
     "outDir": "./build"
   },
-  "include": ["backend/src/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
