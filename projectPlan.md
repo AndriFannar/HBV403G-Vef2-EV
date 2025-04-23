@@ -1,7 +1,7 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
 # Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
 
-### Um Hugbúnaðinn
+## Um Hugbúnaðinn
 Þessi vefþjónusta er ætluð að safna saman, geyma, og tengja saman allt er kemur að kröfugreiningu hugbúnaðarverkefna. Hægt verður meðal annars að:
  * Skilgreina ýmsar kröfur verkefna á borð við viðskipta-, notenda-, virkni- og gæðakröfur.
  * Skilgreina hagsmunaaðila.
@@ -13,7 +13,7 @@ Eftirfarandi verður tryggt:
 
  Farið verður eftir bestu venjum er kemur að kröfugreiningu eins og sett er fram í [Software Requirements, 3rd ed. eftir Karl Wiegers og Joy Beatty, gefin út af Microsoft Press](https://www.processimpact.com/pubs.html#SR3E).
 
-### Fyrsta útgáfa (Einstaklingsverkefni)
+## Fyrsta útgáfa (Einstaklingsverkefni)
 Fylgt er lýsingunni sem gefin er [hér](projectDesc.md).
 Fyrsta útgáfa mun leyfa notendum að búa til Use Cases fyrir sín hubúnaðarverkefni, og það felur í sér að gera notendum kleift að:
  * Skilgreina ýmis formatriði á borð við nafn, dagsetningu, megin notanda og auka notendur, lýsingu, forgang, tíðni, aðrar upplýsingar og ályktanir.
@@ -27,10 +27,10 @@ Fyrsta útgáfa mun leyfa notendum að búa til Use Cases fyrir sín hubúnaðar
  - Gagnagrunnur (SQL).
  - Hönnunarskjöl útfærð (UML rit).
 
- ### Skýrsla
+ ## Skýrsla
  Skýrslan verður skrifuð í LaTeX. Hægt er að skoða `.tex` skjalið [hér](report/ProjectReport.tex), eða `.pdf` útgáfu [hér](report/ProjectReport.pdf).
 
- ### Verkáætlun
+ ## Verkáætlun
  Reynt verður að vinna verkefnið jafnt og þétt yfir önnina, en líklegt er að áætlanir riðlist til vegna ófyrirsjáanlegra þátta í öðrum áföngum. Eftirfarandi áætlun er birt með fyrirvara um breytingar:
 | Vika | Áætluð vinna               |
 |------|----------------------------|
@@ -45,7 +45,7 @@ Fyrsta útgáfa mun leyfa notendum að búa til Use Cases fyrir sín hubúnaðar
 
 Lítil reynsla er í ýmsu sem gert verður í þessu verkefni, að minnsta kosti í þessu umhverfi, og því getur margt reynst vera flókið í útfærslu, en líklegt er að erfiðast verði að útfæra UML klasarit fyrir bakenda og tengingar á milli flæða og krafna. Hýsa ætti verkefnið sem fyrst, og það uppfært jafnóðum. Skýrslan verður skrifuð samhliða verkefnavinnunni. Verkefnið verður ekki kynnt.
 
-### Matskvarði
+## Matskvarði
 | Hluti | Virkni                                            |
 |-------|---------------------------------------------------|
 | 10%   | UML klasarit                                      |
