@@ -3,7 +3,7 @@
 ### Requirements Management System for Software Projects
 
 ## Um Bakendann
-Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur ( aðiens Use Cases hingað til) verkefna. Notar Hono til að útfæra REST-ful API, notar Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
+Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur verkefna. Notar Hono til að útfæra REST-ful API, notar Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
 * Nánari lýsing um hugbúnaðinn í heild má finna [hér](../README.md).
 * Upplýsingar um framendann má finna [hér](../frontend/README.md).
 
