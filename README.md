@@ -29,7 +29,7 @@ Notendur geta:
     * **Viðskiptareglur** (*e. Business Rules*), t.d. lýsing reglu, tegund o.þ.h. 
     * **Notkunardæmi** (*e. Use Cases*), sem geta innihaldið ýmsar upplýsingar á borð við:
       * **Flæði** (*e. FLow*), þ.e. venjulegt-, önnur- og undanteklingarflæði (*e. Normal, Alternate & Exception Flows*), sem hver fyrir sig hafa skref og mögulegar tilvísanir.
-      * **Skilyrði** (*e. Conditions*), þ.e. bæði for- og eftirskilyrði (*e. Pre- & Postconditions)
+      * **Skilyrði** (*e. Conditions*), þ.e. bæði for- og eftirskilyrði (*e. Pre- & Postconditions*)
       * **Viðskiptareglur og Leikara** skráð undir verkefninu.
   * Flest fær skýrt og læsilegt auðkenni svo hægt er að benda á annars staðar í verkefninu með auðveldum máta
     * Þá er hægt að vitna í hluta, þar sem tengingar verða skráðar, svo ekki þarf að skilgreina hluti tvisvar
