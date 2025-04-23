@@ -31,7 +31,7 @@ Notendur geta:
       * **Flæði** (*e. FLow*), þ.e. venjulegt-, önnur- og undanteklingarflæði (*e. Normal, Alternate & Exception Flows*), sem hver fyrir sig hafa skref og mögulegar tilvísanir.
       * **Skilyrði** (*e. Conditions*), þ.e. bæði fyrir- og eftirskilyrði (*e. Pre- & Postconditions)
       * **Viðskiptareglur og Leikara** skráð undir verkefninu.
-  * Flest fær skýra og læsilegt auðkenni svo hægt er að benda á annars staðar í verkefninu með auðveldum máta
+  * Flest fær skýrt og læsilegt auðkenni svo hægt er að benda á annars staðar í verkefninu með auðveldum máta
     * Þá er hægt að vitna í hluta, þar sem tengingar verða skráðar, svo ekki þarf að skilgreina hluti tvisvar
   * Skoða breytingar og afturkalla þær ef þarf
 
