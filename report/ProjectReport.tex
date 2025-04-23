@@ -93,7 +93,7 @@
                \vspace{1ex}
                \hbox{\Large Andri Fannar Kristjánsson}
                \vspace{3ex}
-               \hbox{\Large \textbf{Vefþjónusta fyrir Kröfugreiningu Hugbúnaðar  $\cdot$ Skýrsla}}
+               \hbox{\Large \textbf{Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni  $\cdot$ Skýrsla}}
 }%
 %\scalebox{0.135}{\includegraphics{logo.eps}}
 % \hfill\hbox{}
@@ -106,22 +106,55 @@
 Kröfugreining er einstaklega mikilvæg er kemur að hugbúnaðargerð. Kröfugreining tryggir að hugbúnaðurinn sé framleiddur á réttan hátt, með færri villum og í samræmi við allar kröfur sem viðskiptavinir hafa sett fram. Því er mikilvægt að hafa góðan hugbúnað sem sér um að halda utan um alla eiginleika og kröfur sem verkefni kunna að hafa. Þetta varð mér ljóst eftir að hafa tekið áfangann \href{https://ugla.hi.is/kennsluskra/index.php?tab=nam&chapter=namskeid&id=71152920246}{HBV301 Verkfræði Kröfugreiningar}, þar sem farið var yfir kröfugreiningu og mikilvægi hennar við nákvæma hugbúnaðargerð. Í bókinni \href{https://www.processimpact.com/pubs.html#SR3E}{Software Requirements eftir Karl Wiegers og Joy Beatty}, þar sem vel er farið yfir alla eiginleika kröfugreiningar, kemur það bersýnilega í ljós að það að geyma kröfur á reglubundinn hátt í sérstökum hugbúnaði myndi einfalda til muna allt bókhald, breytingar, og vitnanir sem er notast mikið við. Því kom það vel til greina sem einstaklingsverkefni í Vefforritun 2.
 
 \section{Útfærsla}
-Þar sem slíkur hugbúnaður er sér í lagi stór þegar allt er tekið með, er aðeins áætlað fyrir þetta einstaklingsverkefni að setja upp grunn, og að hægt verði að búa til Use Cases á góðan máta, með öllum þeim eiginleikum sem fylgja því. Það mun fela í sér að notendur geta gert eftirfarandi fyrir hvert Use Case:
+Þar sem fullbúinn hugbúnaður með það hlutverk að halda utan um allar kröfur sem kunna að koma til við hugbúnaðargerð er sér í lagi stór þegar allt er tekið með, mun þetta einstaklingsverkefni aðeins hafa það að markmiði að gera kleift að búa til Notkunardæmi (\textit{e. Use Cases}) á góðan máta, með öllum þeim eiginleikum sem því fylgja. Eftirfarandi virkni er til staðar sem uppfyllir það sem sett var fram í verkefnalýsingunni, og einnig kröfur \href{https://github.com/vefforritun/vef2-2025-h1}{Hópverkefnis 1} (sjá einnig kafla \ref{taekni} fyrir nánari upplýsingar um hvaða tækni var notuð). Notendur geta þannig: 
 \begin{itemize}
-    \item Skilgreina ýmis formatriði á borð við nafn, dagsetningu, megin notanda og auka notendur, lýsingu, forgang, tíðni, aðrar upplýsingar og ályktanir.
-    \item Skilgreina forkröfur og eftirskilyrði sem hægt verður að vitna í.
-    \item  Setja fram venjulegt flæði, önnur flæði og undantekningar, þar sem hægt verður að vitna í einstök skref.
-    \item Tengja viðskiptareglur sem eiga við.
+    \item Búið til aðgang og skráð sig inn
+    \item Búið sér til verkefni fyrir hvern hugbúnað sem notandi vill safna kröfum um. Fyrir hvert verkefni er svo hægt að:
+    \begin{itemize}
+        \item Hlaða upp einni mynd af UML klasariti eða öðru tengdu verkefninu 
+        \item Skilgreina og halda utan um:
+        \begin{itemize}
+            \item \textbf{Leikara} (\textit{e. Actors}), sem hafa Nafn og Lýsingu
+            \item \textbf{Viðskiptareglur} (\textit{e. Business Rules}), sem hafa Skilgreiningu, Tegund, Breytanleika (\textit{e. Mutability}) og Uppruna
+            \item \textbf{Notkunardæmi} (\textit{e. Use Cases}), sem hafa:
+            \begin{itemize}
+                \item Einfalda reiti, þ.e. Nafn, Höfundur, Dagsetning, Lýsing, Orsakavaldur, Forgangsröðun, Tíðni, Aðrar Upplýsingar og Ályktanir
+                \item \textbf{Aðal- og Aukaleikara} (\textit{e. Primary \& Secondary Actors}), ýmist leikarar sem eru til í verkefninu eða nýir
+                \item \textbf{For- og Eftirskilyrði} (\textit{e. Pre- \& Postconditions}), sem geyma aðeins Lýsingu
+                \item \textbf{Venjulegt, Önnur og Undantekningarflæði} (\textit{e. Normal, Alternate \& Exception Flows}), sem innihalda skref sem leikari getur tekið þegar rennt er í gegn um Notkunardæmið
+                \item \textbf{Viðskiptareglur} (\textit{e. Business Rules}), ýmist reglur sem eru til í verkefninu eða nýjar
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
-Þessi virkni var fyrir valinu þar sem talið er að hann yrði mest notaður, hefur ýmsa mismunandi þætti sem krefjast sniðugra lausna, og er mikilvægur hluti af SRS skjali. Hugsað er að seinna meir væri hægt að halda áfram og bæta við frekari virkni, með það markmið að geyma allar þær upplýsingar sem þarf til að búa til SRS skjal. 
 
-\section{Tækni}
-Til að geyma öll þessi gögn er lagt til að nota SQL gagnagrunn, til dæmis PostgreSQL, aðallega vegna kunnáttu. REST API bakendi verður forritaður til að taka á móti öllum beiðnum frá framenda, með það að markmiði (ólíklega í þessu verkefni) að gera mismunandi notendum kleift að búa sér til aðgang þar sem þau geta séð yfirlit yfir sín verkefni. Lítil áhersla verður löð á framenda, aðeins þannig að hann sé snyrtilegur og nothæfur, þar sem megin þungi þessa verkefnis felst í bakendagerð. Þá verður búið til UML klasarit fyrir bakenda, og reyna þannig að áætla hvernig hönnun hans eigi að líta út.
+Eftirfarandi eiginleikar eiga svo við:
+\begin{itemize}
+    \item Hægt verður að vitna í Viðskiptareglur, Skilyrði, Flæði og Skref í flæðum þegar skref eru skilgreind, og þannig hægt að hoppa á milli staða.
+    \item Þegar upplýsingum er breytt er gamla útgáfan geymd, og hægt verður að skoða og afturkalla breytingar (\textit{í vinnslu}).
+    \item Notendur með Admin réttindi geta sótt allar upplýsingar geymdar í gagnagrunni, þ.e. öll verkefni, öll notkunardæmi o.þ.h.
+    \item Allar upplýsingar frá notendum eru hreinsaðar.
+    \item UML klasarit fyrir einindi (\textit{e. Entities}) var sett upp og uppfært eftir þörfum. Sjá á \href{https://github.com/AndriFannar/HBV403G-Vef2-EV/tree/main/backend/designDocs/design.md}{GitHub síðu verkefnisins}.
+    \item Framendi verkefnisins er aðgengilegur \href{https://hbv403g-vef2-ev-frontend.onrender.com}{hér} (\textit{í vinnslu}).
+\end{itemize}
+
+Þessi virkni var fyrir valinu þar sem talið er að hann yrði mest notaður, hefur ýmsa mismunandi þætti sem krefjast sniðugra lausna, og er mikilvægur hluti af Vision \& Scope skjali. Hugsað er að seinna meir væri hægt að halda áfram og bæta við frekari virkni, með það markmið að geyma allar þær upplýsingar sem þarf til að búa til Vision \& Scope og SRS skjöl. 
+
+\section{Tækni}\label{taekni}
+Verkefnið notar \href{https://nodejs.org/en}{Node.js} og \href{https://www.typescriptlang.org/}{TypeScript}. Bakendinn notar \href{https://hono.dev/}{Hono} til að útfæra REST-ful API, og \href{https://zod.dev/}{Zod} til að passa upp á týpur. Gögn eru vistuð í \href{https://www.postgresql.org/}{PostgreSQL} gagnagrunn með \href{https://www.prisma.io/}{Prisma} og \href{https://cloudinary.com/}{Cloudinary} til að geyma myndir. Framendinn notar \href{https://nextjs.org/}{Next.js} og \href{https://tailwindcss.com/}{Tailwind CSS}.
 
 \section{Hvað Gekk Vel}
+Í heild gekk verkefnið vel, þ.e.a.s. það var ekkert sem þurfti alfarið að hætta við, þó nokkrir hnökrar hafi komið upp. Gott var að koma hönnuninni niður á blað í upphafi með því að setja upp UML-rit og uppfæra það eftir þörfum með útfærslunni. Bakendavinnan með Hono gekk einnig fremur vel, og var auðvelt að tileinkna sér. 
 
 \section{Hvað Gekk Illa}
+Ekkert í verkefninu gekk sérstaklega illa, en margir hlutir tóku langan tíma að útfæra á góðan hátt, og fór því mikill tími í ýmsa hluti. Í flestum öðrum verkefnum í Háskóla Íslands hefur verið notast við hlutbundin forritunarmál á borð við Java, og því er nokkuð góð reynsla í að nota slík mál, og áætlað var að geta nýtt sérstaklega reynsluna á að hafa þróað REST-ful API með Java Spring, en erfitt reyndist að nota mál eins og JavaScript (TypeScript gerði oft hlutina nokkuð skárri en þó ekki mikið) sem heldur ekki utan um týpur á sama hátt (\textit{e. loosely typed}). Mikið af tíma fór því í að passa upp á að flóknar týpur skiluðu sér rétt í og úr gagnagrunni, og skipta þeim upp eftir því hvaða gögn \underline{ættu} og hver \underline{mættu} vera til staðar hverju sinni. Þá þurfti að vinna öðruvísi með tengingar á milli hluta, sem virka vel þegar notað er t.d. Java Spring, en þarfnast öðruvísi útfærslu hér. Mikill tími fór einnig í að passa upp á hreinsun gagna og að notendur geta aðeins átt við eigin hluti. 
 
 \section{Hvað Var Áhugavert}
+Margt var áhugavert við verkefnið, og var mikið lært af því að gera slíkt verkefni á þessum skala. Í rauninni má segja að þetta verkefni er álíka stórt og verkefni sem fjögurra einstaklinga teymi gera í \href{https://ugla.hi.is/kennsluskra/index.php?tab=nam&chapter=namskeid&id=08715120246}{Hugbúnaðarverkefni 1}. Allt sem var notað í þessu verkefni er fremur nýtt og lítil reynsla er í að nota slíka tækni, svo þetta var gríðarlega gott tækifæri til að læra. Einnig var skemmtilegt að finna út úr öllum tengingunum og eiginleikunum sem þurftu að vera til staðar í einindunum svo hægt væri að tengja alla hluti vel saman.
+
+\section{Samantekt}
+Verkefnið gekk vel, og náðist að gera flest sem ákveðið var. Það tók töluvert lengri tíma að framkvæma en ætlast var í upphafi. Marga hluti væri sennilega hægt að gera betur, en að mestu leyti er verkefnið á góðum stað. Það var unnið á fagmannlegan hátt, með ítarlegri skjölun, snyrtilegum kóða og með öryggi í huga. Ef það hefði verið forritað með tækni sem reynsla var af að nota, eins og Java Spring, hefði það vissulega gengið hraðar fyrir sig, en stór hluti af verkefninu var að læra á nýja tækni. Gott hefði verið ef tímanum hefði verið varið á skilvirkari hátt, en þegar ný tækni er notuð, þótt hún sé fljótlærð, gerast hlutirnir hægar.
+\newline
+Í framhaldi er sýnin sú að gera hugbúnaðinn líkum GitHub nema fyrir kröfugreiningu, þ.e. hægt verður að bjóða fleirum í að gera breytingar, verkefni geta verið sýnileg eða ósýnileg öðrum o.þ.h.. Svo mætti einnig bæta við stuðning fyrir fleiri upplýsingum um verkefni á borð við hluthafa (\textit{e. Stakeholders}), notendakröfur (\textit{e. User Requirements}), gæðaeiginleika (\textit{e. Quality Attributes}), virknikröfur (\textit{e. Functional Requirements}) o.s.frv.
 
 \end{document}
