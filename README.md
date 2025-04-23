@@ -43,9 +43,10 @@ Nánari lýsing á verkefninu → [Verkefnisáætlun](projectPlan.md).
 ## Skýrsla
 Hægt er að skoða skýrslu verkefnisins: [Skýrsla](report/ProjectReport.pdf).
 
-Einnig má smíða skýrsluna með Latex þýðanda á borð við `pdflatex` ef það er sett upp:
+Einnig má smíða skýrsluna með Latex þýðanda á borð við `pdflatex` ef það er sett upp (mikilvægt að keyra `pdflatex` tvisvar svo tilvísanir komi rétt inn):
 ```bash
 cd report
+pdflatex ProjectReport.tex
 pdflatex ProjectReport.tex
 cd ..
 ```
