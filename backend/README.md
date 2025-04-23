@@ -3,33 +3,35 @@
 ### Requirements Management System for Software Projects
 
 ## Um Bakendann
-Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur verkefna. Notar Hono til að útfæra REST-ful API, notar Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
+Bakendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni. Notar Hono til að útfæra REST-ful API, Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
 * Nánari lýsing um hugbúnaðinn í heild má finna [hér](../README.md).
 * Upplýsingar um framendann má finna [hér](../frontend/README.md).
 
 ## Hýsing
-API má finna [hér](https://hbv403g-vef2-ev2-pls.onrender.com).
+Bakendinn er í ókeypis hýsingu hjá Render, og hægt er að nálgast hann hér: [API](https://hbv403g-vef2-ev2-pls.onrender.com).
 
-## Hönnun
-Hægt er að skoða hönnun forritsins [hér](designDocs/Design.png)
+## Hönnunarskjöl
+Hönnun eininda í bakenda → [Hönnunarskjöl](backend/designDocs/design.md).
 
 ## Uppsetning
-Verkefnið krefst `Node.js` útgáfu 22.
-Hægt er að setja upp verkefnið með því að gera 
+Verkefnið krefst `Node.js` útgáfu 22. Hægt er að setja upp verkefnið með því að gera (verið viss um að þið séuð í `backend` möppunni):
 ```bash
 npm ci
+```
+Til að smíða bakendann þarf svo að keyra:
+```bash
 npm run build
 ```
 
-### Keyrsla
-Til þess að keyra verkefnið þarf að gera
+## Keyrsla
+Til að keyra upp bakendann eftir að hann hefur verið smíðaður þarf að keyra:
 ```bash
 npm run start
 ```
 
 Þýddu skrárnar má finna í [build](build/) möppunni.
 
-### Prófanir
+## Prófanir
 Prófanirnar notast við Vitest útgáfu 3.
 Til þess að keyra prófanir þarf að gera 
 ```bash
