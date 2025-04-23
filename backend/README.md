@@ -11,7 +11,7 @@ Bakendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni. Notar Hono til að útf
 Bakendinn er í ókeypis hýsingu hjá Render, og hægt er að nálgast hann hér: [API](https://hbv403g-vef2-ev2-pls.onrender.com).
 
 ## Hönnunarskjöl
-Hönnun eininda í bakenda → [Hönnunarskjöl](backend/designDocs/design.md).
+Hönnun eininda í bakenda → [Hönnunarskjöl](designDocs/design.md).
 
 ## Uppsetning
 Verkefnið krefst `Node.js` útgáfu 22. Hægt er að setja upp verkefnið með því að gera (verið viss um að þið séuð í `backend` möppunni):
