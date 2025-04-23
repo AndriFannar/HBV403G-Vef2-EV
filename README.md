@@ -1,37 +1,51 @@
-# Kröfugreiningarforrit
-_HBV403G Vefforritun 2 - Einstaklingsverkefni_
+## HBV403G Vefforritun 2 - Einstaklingsverkefni
+# Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
+### Requirements Management System for Software Projects
+![ChatGPTs Attempt at a Logo Made Into a Banner Image](Banner.png)
 
-Einstaklingsverkefnið í HBV403G Vefforritun 2, þar sem ákveðið var að búa til bakenda sem sér um að skrásetja kröfur ( aðiens Use Cases hingað til) verkefna. Notar Hono til að útfæra REST-ful API, og notar Prisma til að geyma gögn. Nánari verkefnalýsingu má finna [hér](projectPlan.md).
+## Um Hugbúnaðinn
+Umsjónarkerfi sem heldur utan um kröfur fyrir hugbúnaðarverkefni. 
 
-## Hýsing
-API má finna [hér](https://hbv403g-vef2-ev2-pls.onrender.com).
+Fyrir nánari upplýsingar:
 
-## Hönnun
-Hægt er að skoða hönnun forritsins [hér](designDocs/Design.png)
 
-## Uppsetning
-Verkefnið krefst `Node.js` útgáfu 22.
-Hægt er að setja upp verkefnið með því að gera 
-```bash
-npm ic
-npm run build
-```
+* Um eiginleika forritsins → [Eiginleikar](#eiginleikar).
+* Um bakendann → [Bakendi](backend/README.md).
+* Um framendann → [Framendi](frontend/README.md).
 
-### Keyrsla
-Til þess að keyra verkefnið þarf að gera
-```bash
-npm run start
-```
+### Hýsing
+Umsjónarkerfið er í ókeypis hýsingu hjá Render, og hægt er að nálgast það [hér](https://hbv403g-vef2-ev-frontend.onrender.com).
 
-Þýddu skrárnar má finna í [build](build/) möppunni.
+### Eiginleikar
+Í núverandi mynd uppfyllir hugbúnaðurinn alla þá eiginleika sem settir voru fram í [Verkefnisáætluninni](projectPlan.md). 
 
-### Prófanir
-Prófanirnar notast við Vitest útgáfu 3.
-Til þess að keyra prófanir þarf að gera 
-```bash
-npm run test
-```
-Einnig er hægt að sjá `coverage` með því að gera
-```bash
-npm run coverage
-```
+Notendur geta:
+
+* Búið til aðgang og þá búið sér til sín eigin verkefni
+* Í hverju verkefni er hægt að:
+  * Hlaða upp einni mynd af UML klasariti eða öðru tengdu verkefninu 
+  * Skilgreina og halda utan um:
+    * **Leikara** (*e. Actors*), t.d. nafn og lýsingu
+    * **Viðskiptareglur** (*e. Business Rules*), t.d. lýsing reglu, tegund o.þ.h. 
+    * **Notkunardæmi** (*e. Use Cases*), sem geta innihaldið ýmsar upplýsingar á borð við:
+      * **Flæði** (*e. FLow*), þ.e. venjulegt-, önnur- og undanteklingarflæði (*e. Normal, Alternate & Exception Flows*), sem hver fyrir sig hafa skref og mögulegar tilvísanir.
+      * **Skilyrði** (*e. Conditions*), þ.e. bæði fyrir- og eftirskilyrði (*e. Pre- & Postconditions)
+      * **Viðskiptareglur og Leikara** skráð undir verkefninu.
+  * Flest fær skýra og læsilegt auðkenni svo hægt er að benda á annars staðar í verkefninu með auðveldum máta
+    * Þá er hægt að vitna í hluta, þar sem tengingar verða skráðar, svo ekki þarf að skilgreina hluti tvisvar
+  * Skoða breytingar og afturkalla þær ef þarf
+
+Fleiri eiginleikar kunna að koma síðar.
+
+### Verkefnalýsing
+Nánari lýsing á verkefninu → [Verkefnisáætlun](projectPlan.md).
+
+### Skýrsla
+Skýrsla verkefnisins: [Skýrsla](report/ProjectReport.pdf).
+
+### Hönnunarskjöl
+Hönnun eininda í bakenda → [Hönnunarskjöl](backend/designDocs/design.md).
+
+### Leyfi
+Þetta verkefni er gefið út undir MIT leyfinu - sjá [LICENSE](LICENSE), og [SPDX](https://spdx.org/licenses/MIT.html).
+

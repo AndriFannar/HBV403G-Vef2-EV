@@ -1,5 +1,5 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
-# Vefþjónusta fyrir Kröfugreiningu Hugbúnaðarverkefna
+# Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
 
 ### Um Hugbúnaðinn
 Þessi vefþjónusta er ætluð að safna saman, geyma, og tengja saman allt er kemur að kröfugreiningu hugbúnaðarverkefna. Hægt verður meðal annars að:
@@ -14,6 +14,7 @@ Eftirfarandi verður tryggt:
  Farið verður eftir bestu venjum er kemur að kröfugreiningu eins og sett er fram í [Software Requirements, 3rd ed. eftir Karl Wiegers og Joy Beatty, gefin út af Microsoft Press](https://www.processimpact.com/pubs.html#SR3E).
 
 ### Fyrsta útgáfa (Einstaklingsverkefni)
+Fylgt er lýsingunni sem gefin er [hér](projectDesc.md).
 Fyrsta útgáfa mun leyfa notendum að búa til Use Cases fyrir sín hubúnaðarverkefni, og það felur í sér að gera notendum kleift að:
  * Skilgreina ýmis formatriði á borð við nafn, dagsetningu, megin notanda og auka notendur, lýsingu, forgang, tíðni, aðrar upplýsingar og ályktanir.
  * Skilgreina forkröfur og eftirskilyrði sem hægt verður að vitna í.
