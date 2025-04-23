@@ -1,5 +1,6 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
 # Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
+#### Requirements Management System for Software Projects
 
 ## Um Hugbúnaðinn
 Þessi vefþjónusta er ætluð að safna saman, geyma, og tengja saman allt er kemur að kröfugreiningu hugbúnaðarverkefna. Hægt verður meðal annars að:

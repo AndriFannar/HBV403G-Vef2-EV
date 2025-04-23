@@ -1,6 +1,6 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
 # Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
-### Requirements Management System for Software Projects
+#### Requirements Management System for Software Projects
 
 ## Um Framendann
 Framendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni, smíðaður með Next.js.

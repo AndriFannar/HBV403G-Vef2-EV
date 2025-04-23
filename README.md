@@ -1,6 +1,6 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
 # Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
-### Requirements Management System for Software Projects
+#### Requirements Management System for Software Projects
 ![ChatGPTs Attempt at a Logo Made Into a Banner Image](Banner.png)
 
 ## Um Hugbúnaðinn

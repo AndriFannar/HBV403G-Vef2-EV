@@ -1,6 +1,6 @@
 ## HBV403G Vefforritun 2 - Einstaklingsverkefni
 # Kröfuumsjónarkerfi fyrir Hugbúnaðarverkefni
-### Requirements Management System for Software Projects
+#### Requirements Management System for Software Projects
 
 ## Um Bakendann
 Bakendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni. Notar Hono til að útfæra REST-ful API, Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
