@@ -4,8 +4,8 @@
 
 ## Um Framendann
 Framendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni, smíðaður með Next.js.
-* Nánari lýsing um hugbúnaðinn í heild má finna [hér](../README.md).
-* Upplýsingar um bakendann má finna [hér](../backend/README.md).
+* Hugbúnaðurinn í heild → [Kröfuumsjónarkerfi](../README.md).
+* Bakendi → [Bakendi](../backend/README.md).
 
 ## Hýsing
 Framendi umsjónarkerfisins er í ókeypis hýsingu hjá Render, og hægt er að nálgast hann [here](https://hbv403g-vef2-ev-frontend.onrender.com).

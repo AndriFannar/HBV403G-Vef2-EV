@@ -4,8 +4,8 @@
 
 ## Um Bakendann
 Bakendi fyrir Umsjónarkerfi fyrir Hugbúnaðarverkefni. Notar Hono til að útfæra REST-ful API, Prisma til að geyma gögn og Cloudinary til að geyma myndir. 
-* Nánari lýsing um hugbúnaðinn í heild má finna [hér](../README.md).
-* Upplýsingar um framendann má finna [hér](../frontend/README.md).
+* Hugbúnaðurinn í heild → [Kröfuumsjónarkerfi](../README.md).
+* Framendi → [Framendi](../frontend/README.md).
 
 ## Hýsing
 Bakendinn er í ókeypis hýsingu hjá Render, og hægt er að nálgast hann hér: [API](https://hbv403g-vef2-ev2-pls.onrender.com).
