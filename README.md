@@ -13,10 +13,10 @@ Fyrir nánari upplýsingar:
 * Um bakendann → [Bakendi](backend/README.md).
 * Um framendann → [Framendi](frontend/README.md).
 
-### Hýsing
+## Hýsing
 Umsjónarkerfið er í ókeypis hýsingu hjá Render, og hægt er að nálgast það [hér](https://hbv403g-vef2-ev-frontend.onrender.com).
 
-### Eiginleikar
+## Eiginleikar
 Í núverandi mynd uppfyllir hugbúnaðurinn alla þá eiginleika sem settir voru fram í [Verkefnisáætluninni](projectPlan.md). 
 
 Notendur geta:
@@ -37,15 +37,15 @@ Notendur geta:
 
 Fleiri eiginleikar kunna að koma síðar.
 
-### Verkefnalýsing
+## Verkefnalýsing
 Nánari lýsing á verkefninu → [Verkefnisáætlun](projectPlan.md).
 
 ### Skýrsla
 Skýrsla verkefnisins: [Skýrsla](report/ProjectReport.pdf).
 
-### Hönnunarskjöl
+## Hönnunarskjöl
 Hönnun eininda í bakenda → [Hönnunarskjöl](backend/designDocs/design.md).
 
-### Leyfi
+## Leyfi
 Þetta verkefni er gefið út undir MIT leyfinu - sjá [LICENSE](LICENSE), og [SPDX](https://spdx.org/licenses/MIT.html).
 
