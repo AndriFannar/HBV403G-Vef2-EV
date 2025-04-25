@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
+            Get started by editing{' '}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
               src/app/page.tsx
             </code>
@@ -23,7 +24,17 @@ export default function Home() {
           <li className="tracking-[-.01em]">
             Save and see your changes instantly.
           </li>
+          <li className="tracking-[-.01em]"></li>
         </ol>
+
+        <Link
+          className="flex items-center gap-2 text-sm/6 font-[family-name:var(--font-geist-mono)] text-center sm:text-left"
+          href="login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Log in
+        </Link>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
@@ -32,13 +43,6 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
             Deploy now
           </a>
           <a
