@@ -51,6 +51,7 @@ app.get('/', c => {
   const routes = [
     { method: 'POST', path: '/users/login' },
     { method: 'POST', path: '/users/signup' },
+    { method: 'GET', path: '/users/me' },
     { method: 'GET', path: '/admin/users' },
     { method: 'GET', path: '/admin/projects' },
     { method: 'GET', path: '/admin/actors' },

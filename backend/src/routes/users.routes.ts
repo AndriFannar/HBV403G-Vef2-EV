@@ -8,7 +8,7 @@
  */
 
 import { validateAndSanitizeBaseUser } from '../lib/validation/userValidator.js';
-import { createUser, getUserByUsername } from '../db/users.db.js';
+import { createUser, getUserById, getUserByUsername } from '../db/users.db.js';
 import { getUseCasesSummaryByUserId } from '../db/useCases.db.js';
 import { jwtMiddleware } from '../middleware/authMiddleware.js';
 import { getEnvironment } from '../lib/config/environment.js';
@@ -112,6 +112,28 @@ export const userApp = new Hono<{ Variables: Variables }>()
       return c.json(createdUser, StatusCodes.CREATED);
     } catch (e) {
       logger.error('Failed to create user:', e);
+      throw e;
+    }
+  })
+
+  /**
+   * @description Get the logged in user.
+   */
+  .get('/me', jwtMiddleware, async c => {
+    try {
+      const userId = c.get('jwtPayload').sub;
+      const user = await getUserById(userId);
+
+      if (!user) {
+        return c.json({ message: 'User not found' }, StatusCodes.NOT_FOUND);
+      }
+
+      return c.json(
+        { id: user.id, username: user.username, role: user.role },
+        StatusCodes.OK
+      );
+    } catch (e) {
+      logger.error('Failed to get user:', e);
       throw e;
     }
   })
