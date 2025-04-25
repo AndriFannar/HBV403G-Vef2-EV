@@ -25,21 +25,21 @@ export const NewUserSchema = z.object({
     .string()
     .min(
       minUsernameLength,
-      `Username must be at least ${minUsernameLength} letters`
+      `Username must be at least ${minUsernameLength} characters long`
     )
     .max(
       maxUsernameLength,
-      `Username must be at most ${maxUsernameLength} letters`
+      `Username must be at most ${maxUsernameLength} characters long`
     ),
   password: z
     .string()
     .min(
       minPasswordLength,
-      `Password must be at least ${minPasswordLength} letters`
+      `Password must be at least ${minPasswordLength} characters long`
     )
     .max(
       maxPasswordLength,
-      `Password must be at most ${maxPasswordLength} letters`
+      `Password must be at most ${maxPasswordLength} characters long`
     ),
 });
 
