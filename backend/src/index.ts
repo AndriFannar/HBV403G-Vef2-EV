@@ -14,10 +14,11 @@ import { useCaseApp } from './routes/useCases.routes.js';
 import { actorApp } from './routes/actors.routes.js';
 import { adminApp } from './routes/admin.routes.js';
 import { userApp } from './routes/users.routes.js';
+import { StatusCodes } from 'http-status-codes';
 import { logger } from './lib/io/logger.js';
 import { serve } from '@hono/node-server';
+import { cors } from 'hono/cors';
 import { Hono } from 'hono';
-import { StatusCodes } from 'http-status-codes';
 
 const env = getEnvironment(process.env, logger);
 
@@ -25,7 +26,20 @@ if (!env) {
   process.exit(1);
 }
 
-export const app = new Hono()
+export const app = new Hono();
+
+app.use(
+  '*',
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://hbv403g-vef2-ev-frontend.onrender.com',
+    ],
+    allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  })
+);
+
+app
   .route('/users', userApp)
   .route('/admin', adminApp)
   .route('/users/:userId/projects', projectApp)
@@ -37,6 +51,7 @@ app.get('/', c => {
   const routes = [
     { method: 'POST', path: '/users/login' },
     { method: 'POST', path: '/users/signup' },
+    { method: 'GET', path: '/users/me' },
     { method: 'GET', path: '/admin/users' },
     { method: 'GET', path: '/admin/projects' },
     { method: 'GET', path: '/admin/actors' },
