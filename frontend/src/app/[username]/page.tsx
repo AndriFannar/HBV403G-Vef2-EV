@@ -1,11 +1,16 @@
 'use client';
 
-import type { Props as ServerProps } from './page';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function UserHomeWrapper({ params }: ServerProps) {
+interface UserHomeWrapperProps {
+  params: {
+    username: string;
+  };
+}
+
+export default function UserHomeWrapper({ params }: UserHomeWrapperProps) {
   const { user, loading } = useAuth();
   const router = useRouter();
 
