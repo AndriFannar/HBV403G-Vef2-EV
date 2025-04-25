@@ -67,6 +67,7 @@ export const userApp = new Hono<{ Variables: Variables }>()
 
       const payload = {
         sub: user.id,
+        username: user.username,
         role: user.role,
       };
 
@@ -74,7 +75,7 @@ export const userApp = new Hono<{ Variables: Variables }>()
 
       return c.json({ token });
     } catch (e) {
-      logger.error('Failed to get user:', e);
+      logger.error('Failed to log in user:', e);
       throw e;
     }
   })
@@ -109,7 +110,16 @@ export const userApp = new Hono<{ Variables: Variables }>()
         saltRounds
       );
       const createdUser = await createUser(validUser.data);
-      return c.json(createdUser, StatusCodes.CREATED);
+
+      const payload = {
+        sub: createdUser.id,
+        username: createdUser.username,
+        role: createdUser.role,
+      };
+
+      const token = await sign(payload, environment?.jwtSecret);
+
+      return c.json({ token }, StatusCodes.CREATED);
     } catch (e) {
       logger.error('Failed to create user:', e);
       throw e;
