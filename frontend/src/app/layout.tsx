@@ -8,10 +8,15 @@
  */
 
 // eslint-disable-next-line camelcase
-import { Geist, Geist_Mono } from 'next/font/google';
-import PageLayout from '@/components/PageLayout';
+import { Geist, Geist_Mono, League_Gothic } from 'next/font/google';
+import PageLayout from '@/components/layout/PageLayout';
 import type { Metadata } from 'next';
 import './globals.css';
+
+const leagueGothic = League_Gothic({
+  variable: '--font-league-gothic',
+  subsets: ['latin'],
+});
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} ${leagueGothic.variable} antialiased flex flex-col min-h-screen`}
       >
         <PageLayout>{children}</PageLayout>
       </body>

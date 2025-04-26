@@ -99,6 +99,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  /**
+   * Authenticates the user by sending a request to the API.
+   * @param username - The username of the user
+   * @param password - The password of the user
+   * @param remember - Whether to remember the user
+   * @param login - Whether to log in or sign up
+   * @returns The authenticated user
+   */
   async function authenticateUser(
     username: string,
     password: string,
@@ -148,6 +156,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return userData;
   }
 
+  /**
+   * Logs out the user by removing the token from local storage and session storage.
+   */
   function logout() {
     localStorage.removeItem('token');
     sessionStorage.removeItem('token');
@@ -171,6 +182,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Custom hook to use the AuthContext.
+ * @returns The authentication context value.
+ */
 export function useAuth() {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error('useAuth must be used within an AuthProvider');
