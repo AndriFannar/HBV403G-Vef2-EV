@@ -8,12 +8,13 @@
  */
 'use client';
 
-import { ApiError, useAuth } from '@/context/AuthContext';
 import { LoginForm } from '@/components/auth/LoginForm';
 import { Spinner } from '@/components/ui/Spinner';
+import { useAuth } from '@/context/AuthContext';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { STRINGS } from '@/lib/strings';
+import { ApiError } from '@/lib/api';
 import toast from 'react-hot-toast';
 
 /**
@@ -21,7 +22,7 @@ import toast from 'react-hot-toast';
  * @returns Login page
  */
 export default function LoginPage() {
-  const { authenticateUser, isAuthenticated, loading, user } = useAuth();
+  const { login, isAuthenticated, loading, user } = useAuth();
   const router = useRouter();
 
   const [username, setUsername] = useState('');
@@ -54,7 +55,7 @@ export default function LoginPage() {
     setSubmitting(true);
 
     try {
-      const user = await authenticateUser(username, password, remember, true);
+      const user = await login(username, password, remember);
       toast.success(STRINGS.auth.login.onSuccess);
       router.push(`/${user.username}`);
     } catch (err: unknown) {

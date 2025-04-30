@@ -8,12 +8,13 @@
  */
 'use client';
 
-import { ApiError, useAuth } from '@/context/AuthContext';
 import { SignupForm } from '@/components/auth/SignupForm';
 import { Spinner } from '@/components/ui/Spinner';
+import { useAuth } from '@/context/AuthContext';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { STRINGS } from '@/lib/strings';
+import { ApiError } from '@/lib/api';
 import toast from 'react-hot-toast';
 
 /**
@@ -21,7 +22,7 @@ import toast from 'react-hot-toast';
  * @returns Signup page
  */
 export default function SignupPage() {
-  const { authenticateUser, isAuthenticated, loading, user } = useAuth();
+  const { signup, isAuthenticated, loading, user } = useAuth();
   const router = useRouter();
 
   const [username, setUsername] = useState('');
@@ -54,7 +55,7 @@ export default function SignupPage() {
     setSubmitting(true);
 
     try {
-      const user = await authenticateUser(username, password, remember, false);
+      const user = await signup(username, password, remember);
       toast.success(STRINGS.auth.signup.onSuccess);
       router.push(`/${user.username}`);
     } catch (err: unknown) {

@@ -4,25 +4,18 @@
  * @author Andri Fannar Kristjánsson
  * @version 1.0.0
  * @date April 24, 2025
- * @dependencies react
+ * @dependencies react, @lib/api
  */
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
-
-/**
- * ApiError class for communicating API errors.
- */
-export class ApiError extends Error {
-  message: string;
-  errors?: Record<string, { _errors: string }>;
-  constructor(data: { message: string; errors?: never }) {
-    super(data.message);
-    this.name = 'ApiError';
-    this.message = data.message;
-    this.errors = data.errors;
-  }
-}
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { api, ApiError } from '@/lib/api';
 
 /**
  * User interface.
@@ -41,21 +34,26 @@ interface AuthContextValue {
   token: string | null;
   isAuthenticated: boolean;
   loading: boolean;
-  authenticateUser: (
+  login: (
     // eslint-disable-next-line no-unused-vars
     username: string,
     // eslint-disable-next-line no-unused-vars
     password: string,
     // eslint-disable-next-line no-unused-vars
-    remember: boolean,
+    remember: boolean
+  ) => Promise<User>;
+  signup: (
     // eslint-disable-next-line no-unused-vars
-    login?: boolean
+    username: string,
+    // eslint-disable-next-line no-unused-vars
+    password: string,
+    // eslint-disable-next-line no-unused-vars
+    remember: boolean
   ) => Promise<User>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
 /**
  * AuthProvider component
@@ -64,107 +62,109 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
  */
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<{
-    id: string;
-    username: string;
-    role: string;
-  } | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const saved =
-      localStorage.getItem('token') ?? sessionStorage.getItem('token') ?? null;
-    if (saved) {
-      setToken(saved);
-      fetch(`${API_BASE}/users/me`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${saved}`,
-        },
-      })
-        .then(async res => {
-          if (!res.ok) throw new Error('Failed to fetch user data');
-          const data = await res.json();
-          setUser(data);
-        })
-        .catch(() => {
-          localStorage.removeItem('token');
-          sessionStorage.removeItem('token');
-          setToken(null);
-          setUser(null);
-        })
-        .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
+  /**
+   * Fetches a user from the API with a corresponding JWT token.
+   * Sets and returns the user if token is valid and user is returned.
+   * @returns User if it exists.
+   */
+  const fetchCurrentUser = useCallback(async (): Promise<User> => {
+    const savedToken =
+      localStorage.getItem('token') ?? sessionStorage.getItem('token');
+    if (!savedToken) {
+      throw new Error('No token');
     }
+
+    setToken(savedToken);
+
+    const userData = await api.get<User>('/users/me', {
+      headers: { Authorization: `Bearer ${savedToken}` },
+    });
+    setUser(userData);
+    return userData;
   }, []);
 
   /**
-   * Authenticates the user by sending a request to the API.
-   * @param username - The username of the user
-   * @param password - The password of the user
-   * @param remember - Whether to remember the user
-   * @param login - Whether to log in or sign up
-   * @returns The authenticated user
+   * Tries to load user on mount.
    */
-  async function authenticateUser(
-    username: string,
-    password: string,
-    remember: boolean,
-    login = true
-  ): Promise<User> {
-    const res = await fetch(
-      login
-        ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/login`
-        : `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/signup`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      }
-    );
+  useEffect(() => {
+    fetchCurrentUser()
+      .catch(() => {
+        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
+        setToken(null);
+        setUser(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [fetchCurrentUser]);
 
-    const data = await res.json();
-    if (!res.ok) {
-      throw new ApiError(data);
-    }
+  /**
+   * Logs in the user by sending a request to the API.
+   * Saves the token into local storage (remember) or session.
+   * @param username - The username of the user.
+   * @param password - The password of the user.
+   * @param remember - Whether to remember the user.
+   * @returns The authenticated user.
+   */
+  const login = useCallback(
+    async (username: string, password: string, remember: boolean) => {
+      const { token: newToken } = await api
+        .post<{ token: string }>('/users/login', { username, password })
+        .catch(err => {
+          throw new ApiError(err);
+        });
 
-    const newToken = data.token;
-    if (remember) localStorage.setItem('token', newToken);
-    else sessionStorage.setItem('token', newToken);
+      if (remember) localStorage.setItem('token', newToken);
+      else sessionStorage.setItem('token', newToken);
 
-    setToken(newToken);
+      setToken(newToken);
 
-    const userRes = await fetch(`${API_BASE}/users/me`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${newToken}`,
-      },
-    });
-    const userData = await userRes.json();
-    if (!userRes.ok) {
-      localStorage.removeItem('token');
-      sessionStorage.removeItem('token');
-      setToken(null);
-      setUser(null);
-      throw new Error('Failed to fetch user data');
-    }
+      const userData = await fetchCurrentUser();
+      return userData;
+    },
+    [fetchCurrentUser]
+  );
 
-    setUser(userData);
-    return userData;
-  }
+  /**
+   * Signs up a new user by sending a request to the API.
+   * Saves the token into local storage (remember) or session.
+   * @param username - The username of the user.
+   * @param password - The password of the user.
+   * @param remember - Whether to remember the user.
+   * @returns The authenticated user.
+   */
+  const signup = useCallback(
+    async (username: string, password: string, remember: boolean) => {
+      const { token: newToken } = await api
+        .post<{ token: string }>('/users/signup', { username, password })
+        .catch(err => {
+          throw new ApiError(err);
+        });
+
+      if (remember) localStorage.setItem('token', newToken);
+      else sessionStorage.setItem('token', newToken);
+
+      setToken(newToken);
+
+      const userData = await fetchCurrentUser();
+      return userData;
+    },
+    [fetchCurrentUser]
+  );
 
   /**
    * Logs out the user by removing the token from local storage and session storage.
    */
-  function logout() {
+  const logout = useCallback(() => {
     localStorage.removeItem('token');
     sessionStorage.removeItem('token');
     setToken(null);
     setUser(null);
-  }
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -173,7 +173,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         token,
         isAuthenticated: !!token,
         loading,
-        authenticateUser,
+        login,
+        signup,
         logout,
       }}
     >
